@@ -20,10 +20,10 @@
 
 		validateSession();
 
-		onSessionValid({
-			user_id : '1111',
-			name : 'John Smith'
-		});
+//		onSessionValid({
+//			user_id : '1111',
+//			name : 'Jiahe Chang'
+//		});
 	}
 
 	/**
@@ -31,7 +31,7 @@
 	 */
 	function validateSession() {
 		// The request parameters
-		var url = './LoginServlet';
+		var url = './loginservlet';
 		var req = JSON.stringify({});
 
 		// display loading message
@@ -140,7 +140,7 @@
 		password = md5(username + md5(password));
 
 		// The request parameters
-		var url = './LoginServlet';
+		var url = './loginservlet';
 		var params = 'user_id=' + username + '&password=' + password;
 		var req = JSON.stringify({});
 
@@ -149,7 +149,7 @@
 		function(res) {
 			var result = JSON.parse(res);
 
-			// successfully logged in
+			// successfully logged in	
 			if (result.status === 'OK') {
 				onSessionValid(result);
 			}
@@ -292,7 +292,7 @@
 
 	/**
 	 * API #1 Load the nearby items API end point: [GET]
-	 * /Dashi/search?user_id=1111&lat=37.38&lon=-122.08
+	 * /Titan/search?user_id=1111&lat=37.38&lon=-122.08
 	 */
 	function loadNearbyItems() {
 		console.log('loadNearbyItems');

@@ -143,4 +143,16 @@ public class MongoDBConnection implements DBConnection {
 				options);
 	}
 
+	@Override
+	public String getFirstLastName(String user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean verifyLogin(String user, String pwd) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

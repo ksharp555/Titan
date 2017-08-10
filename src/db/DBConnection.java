@@ -68,4 +68,11 @@ public interface DBConnection {
    * @param item
    */
   public void saveItem(Item item);
+  /**
+   * get user first last name
+   * @param item
+   */
+  public String getFirstLastName(String user);
+  
+  public boolean verifyLogin(String user, String pwd);
 }

@@ -36,6 +36,12 @@ public class RecommendItem extends HttpServlet {
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+	// allow access only if session exists
+	HttpSession session = request.getSession();
+	if (session.getAttribute("user") == null) {
+		response.setStatus(403);
+		return;
+	}
     String userId = request.getParameter("user_id");
     double lat = Double.parseDouble(request.getParameter("lat"));
     double lon = Double.parseDouble(request.getParameter("lon"));
